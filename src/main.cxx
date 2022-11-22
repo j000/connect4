@@ -1,7 +1,13 @@
-#include <iostream>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
-auto main(int, char**) -> int
+auto main(int argc, char** argv) -> int
 {
-	std::cout << "Hello, world!" << std::endl;
-	return 0;
+	QGuiApplication app(argc, argv);
+
+	QQmlApplicationEngine engine{};
+	auto mainWindow{QStringLiteral("qrc:/windows/main.qml")};
+	engine.load(mainWindow);
+
+	return app.exec();
 }
