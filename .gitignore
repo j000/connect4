@@ -1,1 +1,12 @@
+# Syncthing
+.stignore
+.stfolder
+
+# typical output dir
 /build
+
+# vim
+*.swp
+
+# VS
+/.vs
